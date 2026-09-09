@@ -5,8 +5,8 @@ services:
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     plan: free
-    dockerCommand: ./start.sh
-    healthCheckPath: /health
+    dockerCommand: ./start.sh # 複文コマンドは使えないことがあるので、代わりに実行権限付きのスクリプトを実行する
+    healthCheckPath: /health # main.pyの/healthエンドポイントで疎通確認できたらデプロイ成功
     # preDeployCommand: "alembic upgrade head" # free tierだと使えない
     envVars:
       - key: DATABASE_URL
