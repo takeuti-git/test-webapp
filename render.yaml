@@ -5,8 +5,7 @@ services:
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     plan: free
-    dockerCommand: >
-      sh -c "echo 'hello'"
+    dockerCommand: ./start.sh
     healthCheckPath: /health
     # preDeployCommand: "alembic upgrade head" # free tierだと使えない
     envVars:
