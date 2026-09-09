@@ -21,3 +21,7 @@ async def index(db_session: Session = Depends(get_db)):
     users = db_session.scalars(stmt).all()
     return users
 
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
+
